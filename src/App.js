@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// API KEY = deab272a7eed429baa76db25196b1322
+// import Home from "./pages/Home";
+
+// function App() {
+//   return <Home />;
+// }
+// export default App;
+
+// ------------gpt--------------------
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Help from "./components/Help";
+import MoviePage from "./pages/MoviePage";
 
 function App() {
+  // return <Home />;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/help">Help</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/:id" element={<MoviePage />} />
+      </Routes>
     </div>
   );
 }
