@@ -41,15 +41,17 @@ export default function Home() {
     return <MovieCard {...movie} key={movie.id} />;
   });
 
+  function search_movie(movie) {
+    setQuery(movie);
+  }
+
   return (
     <div>
       <div className="container mx-auto">
-        <MovieSearch searchMovie={(movie) => setQuery(movie)} />
+        <MovieSearch searchMovie={search_movie} />
 
         {!renderVar && movieImages.length === 0 && (
-          <h1 className="text-5xl text-center mx-auto mt-32">
-            No Images Found
-          </h1>
+          <h1 className="text-5xl text-center mx-auto mt-32">No Images Found</h1>
         )}
 
         {renderVar ? (

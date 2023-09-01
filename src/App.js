@@ -8,7 +8,7 @@
 
 // ------------gpt--------------------
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Help from "./components/Help";
 import MoviePage from "./pages/MoviePage";
